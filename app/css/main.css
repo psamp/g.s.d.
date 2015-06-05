@@ -1,0 +1,73 @@
+.body {
+  max-width: 1300px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  overflow: hidden;
+  -ms-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0; }
+
+.container {
+  width: 50%;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  outline: none; }
+
+.newTask {
+  text-align: center;
+  width: 90%;
+  margin: 50px; }
+  .newTask form .taskText {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: red;
+    border: 3px red solid;
+    border-bottom: 0;
+    border-radius: 5px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none; }
+  .newTask form .addButton {
+    width: 101%;
+    background-color: red;
+    height: 150px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #CC0000;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    margin-left: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+.tasksDoing {
+  text-align: center;
+  width: 90%;
+  margin: 50px;
+  margin-top: 0;
+  margin-bottom: 0px; }
+  .tasksDoing .whatButton {
+    width: 101%;
+    background-color: yellow;
+    height: 150px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #CCCC00;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    margin-left: 0; }
+
+.complete {
+  text-decoration: line-through; }

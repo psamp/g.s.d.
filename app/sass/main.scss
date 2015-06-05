@@ -1,0 +1,94 @@
+// VARIABLES & MIXINS
+
+@mixin boxsize ($bsize) {
+  -ms-box-sizing:$bsize;
+  -moz-box-sizing:$bsize;
+  -webkit-box-sizing:$bsize; 
+  box-sizing:$bsize;
+  margin:0;
+}
+
+@mixin colorbutton ($bgcolor, $color) {
+  width:101%;
+  background-color:$bgcolor;
+  height:150px;
+  display: inline-block;
+  margin:0;
+  padding:0;
+  // margin-bottom:20px;
+  color: $color;
+  border:0;
+  border-radius:5px;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  margin-left:0;
+}
+
+$os: 'Open Sans', sans-serif;
+$weight: 300;
+
+// END VARIABLES, FONTS, MIXINS
+
+.body {
+  max-width:1300px;
+  font-family:$os;
+  font-weight:$weight;
+  overflow:hidden;
+  @include boxsize (content-box);
+}
+
+.container {
+  width: 50%;
+  padding: 0;
+  margin: 0 auto;
+  list-style:none;
+  outline:none;
+}
+
+.newTask {
+  text-align:center;
+  width:90%;
+  margin:50px;
+
+
+    form {
+
+      .taskText {
+        width:100%;
+        // margin-bottom:20px;
+        height:50px;
+        text-align:center;
+        color:red;
+        border:3px red solid;
+        border-bottom:0;
+        border-radius:5px;
+        border-bottom-left-radius:0;
+        border-bottom-right-radius:0;
+        outline:none;
+
+      }
+
+      .addButton {
+        @include colorbutton(red, #CC0000);
+        border-top-left-radius:0;
+        border-top-right-radius:0;
+      }
+  }
+}
+
+.tasksDoing {
+  text-align:center;
+  width:90%;
+  margin:50px;
+  margin-top:0;
+  margin-bottom:0px;
+
+  .whatButton {
+    @include colorbutton(yellow, #CCCC00);
+  }
+}
+
+.complete {
+  text-decoration: line-through;
+}
