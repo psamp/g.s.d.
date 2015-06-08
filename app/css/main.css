@@ -1,19 +1,12 @@
-.body {
-  max-width: 1300px;
+* {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  overflow: hidden;
-  -ms-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  margin: 0; }
+  list-style: none; }
 
 .container {
   width: 50%;
   padding: 0;
   margin: 0 auto;
-  list-style: none;
   outline: none; }
 
 .newTask {
@@ -25,7 +18,7 @@
     height: 50px;
     text-align: center;
     color: red;
-    border: 3px red solid;
+    border: 2px red solid;
     border-bottom: 0;
     border-radius: 5px;
     border-bottom-left-radius: 0;
@@ -33,6 +26,7 @@
     outline: none; }
   .newTask form .addButton {
     width: 101%;
+    font-size: 1.5em;
     background-color: red;
     height: 150px;
     display: inline-block;
@@ -49,13 +43,13 @@
     border-top-right-radius: 0; }
 
 .tasksDoing {
-  text-align: center;
   width: 90%;
   margin: 50px;
   margin-top: 0;
   margin-bottom: 0px; }
   .tasksDoing .whatButton {
     width: 101%;
+    font-size: 1.5em;
     background-color: yellow;
     height: 150px;
     display: inline-block;
@@ -69,5 +63,30 @@
     text-decoration: none;
     margin-left: 0; }
 
-.complete {
-  text-decoration: line-through; }
+.tasksDone {
+  text-align: center;
+  width: 90%;
+  margin: 50px;
+  margin-top: 0;
+  margin-bottom: 0px; }
+  .tasksDone .doneButton {
+    width: 101%;
+    font-size: 1.5em;
+    background-color: #00ff00;
+    height: 150px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    color: #00CC00;
+    border: 0;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    margin-left: 0; }
+
+li:hover, li .complete {
+  transition: 1s all ease;
+  text-decoration: line-through;
+  color: lightgray;
+  font-style: italic; }

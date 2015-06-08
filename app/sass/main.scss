@@ -10,6 +10,7 @@
 
 @mixin colorbutton ($bgcolor, $color) {
   width:101%;
+  font-size:1.5em;
   background-color:$bgcolor;
   height:150px;
   display: inline-block;
@@ -30,19 +31,18 @@ $weight: 300;
 
 // END VARIABLES, FONTS, MIXINS
 
-.body {
-  max-width:1300px;
+* {
+  // max-width:1300px;
   font-family:$os;
   font-weight:$weight;
-  overflow:hidden;
-  @include boxsize (content-box);
+  list-style:none;
+  // @include boxsize (content-box);
 }
 
 .container {
   width: 50%;
   padding: 0;
   margin: 0 auto;
-  list-style:none;
   outline:none;
 }
 
@@ -60,7 +60,7 @@ $weight: 300;
         height:50px;
         text-align:center;
         color:red;
-        border:3px red solid;
+        border:2px red solid;
         border-bottom:0;
         border-radius:5px;
         border-bottom-left-radius:0;
@@ -78,7 +78,6 @@ $weight: 300;
 }
 
 .tasksDoing {
-  text-align:center;
   width:90%;
   margin:50px;
   margin-top:0;
@@ -89,6 +88,25 @@ $weight: 300;
   }
 }
 
-.complete {
-  text-decoration: line-through;
+.tasksDone {
+  text-align:center;
+  width:90%;
+  margin:50px;
+  margin-top:0;
+  margin-bottom:0px;
+
+  .doneButton {
+    @include colorbutton(#00ff00, #00CC00);
+  }
+}
+
+li {
+
+  &:hover, .complete {
+    transition: 1s all ease;
+    text-decoration: line-through;
+    color:lightgray;
+    font-style: italic;
+  }
+
 }

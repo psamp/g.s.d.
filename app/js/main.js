@@ -1,51 +1,59 @@
-var Todo = function (options) {
+(function(){
+
+  "use strict";
+
+  var Todo = function (options) {
   var args = options || {};
 
   this.task = args.task;
   this.status = 'Open';
 
-};
+  };
 
-//Task list
-var storageBin = [];
+  //Task list
+  var storageBin = [];
 
-//Set up submit
-// On submit create a new instance/task
+  //Set up submit
+  // On submit create a new instance/task
 
-$('#addTask').on('submit', function (e) {
+  $('#addTask').on('submit', function (e) {
 
-  e.preventDefault();
+    e.preventDefault();
 
-  var taskText = $('#taskText').val();
-  var taskInstance = new Todo({task: taskText});
+    var taskText = $('#taskText').val();
+    var taskInstance = new Todo({task: taskText});
 
-  storageBin.push(taskInstance);
+    storageBin.push(taskInstance);
 
-  //Store tasks for Later
+    //Store tasks for Later
 
-  storageBin.push(taskInstance);
+    storageBin.push(taskInstance);
 
-  // Shows up visually
-  $('#tasks').append('<li>' + taskText + '</li>');
+    // Shows up visually
+    $('#tasks').append('<li>' + taskText + '</li>');
 
-});
+  });
 
-// Toggle item
+  // Toggle item
 
-$('#tasks').on('click', 'li', function (e){
-  e.preventDefault();
+  $('#tasks').on('click', 'li', function (e){
+    e.preventDefault();
 
-  $(this).addClass("complete");
+    //grab li item clicked on
+    //mark that item as completed
 
-  //grab li item clicked on
-  //mark that item as completed
+    var tTask = $(this).text();
+    
+    var taskToEdit = _.find(storageBin, {task: tTask});
 
-  var tTask = $(this).text();
+    taskToEdit.status = 'Closed';
 
-  var taskToEdit = _.find(storageBin, {task: tTask});
+    $('li').addClass("complete");
 
- taskToEdit.status = 'Closed';
+    if (taskToEdit.status === 'Closed') {
 
-  console.log(taskToEdit);
+      $('#tasksDone').append('<li>' + taskToEdit.title + '</li>');
+    }
+  });
 
-});
+}());
