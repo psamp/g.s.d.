@@ -1,12 +1,13 @@
-(function(){
+// (function(){
 
-  "use strict";
+//   "use strict";
 
   var Todo = function (options) {
   var args = options || {};
 
   this.task = args.task;
   this.status = 'Open';
+  this.timestamp = moment().format();
 
   };
 
@@ -50,8 +51,8 @@
 
     if (taskToEdit.status === 'Closed') {
 
-      $('#tasksDone').append('<li>' + taskToEdit.title + '</li>');
+      $('#tasksDone').append('<li class="' + taskToEdit.timestamp + '">' + tTask + '</li>');
     }
   });
 
-}());
+// }());
