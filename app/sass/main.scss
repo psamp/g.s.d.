@@ -26,6 +26,13 @@
   margin-left:0;
 }
 
+@mixin lidoinghover () {
+  transition: 1s all ease;
+  text-decoration: line-through;
+  color:lightgray;
+  font-style: italic;
+}
+
 $os: 'Open Sans', sans-serif;
 $weight: 300;
 
@@ -86,6 +93,12 @@ $weight: 300;
   .whatButton {
     @include colorbutton(yellow, #CCCC00);
   }
+
+  li {
+
+    &:hover {
+      @include lidoinghover();
+    }
 }
 
 .tasksDone {
@@ -100,13 +113,7 @@ $weight: 300;
   }
 }
 
-li {
+.complete {
 
-  &:hover, .complete {
-    transition: 1s all ease;
-    text-decoration: line-through;
-    color:lightgray;
-    font-style: italic;
-  }
-
+  @include lidoinghover();
 }

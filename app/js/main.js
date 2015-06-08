@@ -23,8 +23,6 @@
     var taskText = $('#taskText').val();
     var taskInstance = new Todo({task: taskText});
 
-    storageBin.push(taskInstance);
-
     //Store tasks for Later
 
     storageBin.push(taskInstance);
