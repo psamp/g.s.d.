@@ -47,11 +47,13 @@
 
     taskToEdit.status = 'Closed';
 
-    $('li').addClass("complete");
+    $(this).addClass("complete");
 
     if (taskToEdit.status === 'Closed') {
 
       $('#tasksDone').append('<li class="' + taskToEdit.timestamp + '">' + tTask + '</li>');
+
+      $('#tasks li').remove(taskToEdit.title);
     }
   });
 
