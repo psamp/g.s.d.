@@ -32,6 +32,7 @@
     display: inline-block;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
     color: #CC0000;
     border: 0;
     border-radius: 5px;
@@ -46,7 +47,7 @@
   width: 90%;
   margin: 50px;
   margin-top: 0;
-  margin-bottom: 0px; }
+  margin-bottom: 50px; }
   .tasksDoing .whatButton {
     width: 101%;
     font-size: 1.5em;
@@ -55,6 +56,7 @@
     display: inline-block;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
     color: #CCCC00;
     border: 0;
     border-radius: 5px;
@@ -63,23 +65,16 @@
     text-decoration: none;
     margin-left: 0; }
   .tasksDoing li:hover {
-    transition: 1s all ease;
+    transition: .2s all ease;
     text-decoration: line-through;
     color: lightgray;
     font-style: italic; }
 
-.tasksDone {
-  text-align: center;
+.tasksDoneList {
   width: 90%;
   margin: 50px;
-  margin-top: 0;
-  margin-bottom: 0px; }
-  .tasksDone li {
-    transition: 1s all ease;
-    text-decoration: line-through;
-    color: lightgray;
-    font-style: italic; }
-  .tasksDone .doneButton {
+  margin-bottom: 20px; }
+  .tasksDoneList .doneButton {
     width: 101%;
     font-size: 1.5em;
     background-color: #00ff00;
@@ -87,6 +82,7 @@
     display: inline-block;
     margin: 0;
     padding: 0;
+    margin-bottom: 20px;
     color: #00CC00;
     border: 0;
     border-radius: 5px;
@@ -94,10 +90,9 @@
     outline: none;
     text-decoration: none;
     margin-left: 0; }
-
-.complete {
-  transition: 1s all ease;
-  text-decoration: line-through;
-  color: lightgray;
-  font-style: italic;
-  transition: none; }
+  .tasksDoneList .complete {
+    transition: .2s all ease;
+    text-decoration: line-through;
+    color: lightgray;
+    font-style: italic;
+    transition: none; }

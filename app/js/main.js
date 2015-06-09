@@ -2,6 +2,8 @@
 
 //   "use strict";
 
+  // CREATE TASK CONSTRUCTOR
+
   var Todo = function (options) {
   var args = options || {};
 
@@ -11,49 +13,62 @@
 
   };
 
-  //Task list
+  // CREATE EMPTY ARRAY.
+
   var storageBin = [];
 
-  //Set up submit
-  // On submit create a new instance/task
+  // WHEN ADDTASK BUTTON IS PRESSED:
 
   $('#addTask').on('submit', function (e) {
 
     e.preventDefault();
 
+    // PULL OUT THE VALUE OF THE INPUT FIELD...
+
     var taskText = $('#taskText').val();
+
+    // ...VAR TASK INSTANCE EQUALS A NEW TASK WITH THE NAME OF WHAT WAS INPUT...
+
     var taskInstance = new Todo({task: taskText});
 
-    //Store tasks for Later
+    //...PUSH TASKS TO OUR STORAGE...
 
     storageBin.push(taskInstance);
 
-    // Shows up visually
-    $('#tasks').append('<li>' + taskText + '</li>');
+    // ...AND FINALLY APPEND THE TEXT THAT WAS INPUT TO THE #TASKS UL.
+
+    $('#tasks').append('<li class="">' + taskText + '</li>');
 
   });
 
-  // Toggle item
+  // ON THE CLICK OF AN LI INSTIDE OF THE #TASKS UL:
 
   $('#tasks').on('click', 'li', function (e){
     e.preventDefault();
 
-    //grab li item clicked on
-    //mark that item as completed
+    // CREATE A VARIABLE EQUAL TO THE TEXT OF THE LI INSIDE OF #TASK...
 
     var tTask = $(this).text();
+
+    // ...CREATE A VARIABLE THAT LOOKS WITHIN OUR STORAGE FOR THE TASK WITH THE SAME TITLE AS TTASK...
     
     var taskToEdit = _.find(storageBin, {task: tTask});
 
+    // ...REDEFINE OUR TASK'S STATUS TO CLOSED...
+
     taskToEdit.status = 'Closed';
 
-    $(this).addClass("complete");
+    // IF THE TASK IS CLOSED, APPEND IT TO THE TASKS DONE UL AND...
 
     if (taskToEdit.status === 'Closed') {
 
-      $('#tasksDone').append('<li class="' + taskToEdit.timestamp + '">' + tTask + '</li>');
+      // ...APPEND FINISHED TASKS TO THE DONE UL WITH A CSS CLASS THAT WILL PULL IN STYLES...
 
-      $('#tasks li').remove(taskToEdit.title);
+      $('#tasksDone').append('<li class="complete">' + tTask + '</li>');
+
+      // ...REMOVE THE TASK FROM THE #TASK UL.
+
+      $('#tasks').remove(tTask); 
     }
   });
 

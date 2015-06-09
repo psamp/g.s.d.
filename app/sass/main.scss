@@ -16,7 +16,7 @@
   display: inline-block;
   margin:0;
   padding:0;
-  // margin-bottom:20px;
+  margin-bottom:20px;
   color: $color;
   border:0;
   border-radius:5px;
@@ -27,7 +27,7 @@
 }
 
 @mixin lidoinghover () {
-  transition: 1s all ease;
+  transition: .2s all ease;
   text-decoration: line-through;
   color:lightgray;
   font-style: italic;
@@ -88,7 +88,7 @@ $weight: 300;
   width:90%;
   margin:50px;
   margin-top:0;
-  margin-bottom:0px;
+  margin-bottom:50px;
 
   .whatButton {
     @include colorbutton(yellow, #CCCC00);
@@ -102,24 +102,17 @@ $weight: 300;
   }
 }
 
-.tasksDone {
-  text-align:center;
+.tasksDoneList {
   width:90%;
   margin:50px;
-  margin-top:0;
-  margin-bottom:0px;
-
-  li {
-    @include lidoinghover();
-  }
+  margin-bottom:20px;
 
   .doneButton {
     @include colorbutton(#00ff00, #00CC00);
   }
-}
 
-.complete {
-
-  @include lidoinghover();
-  transition: none;
+  .complete {
+    @include lidoinghover();
+    transition: none;
+  }
 }
