@@ -46,8 +46,7 @@
 .tasksDoing {
   width: 90%;
   margin: 50px;
-  margin-top: 0;
-  margin-bottom: 50px; }
+  margin-top: 0; }
   .tasksDoing .whatButton {
     width: 101%;
     font-size: 1.5em;
@@ -69,11 +68,14 @@
     text-decoration: line-through;
     color: lightgray;
     font-style: italic; }
+  .tasksDoing .delete {
+    visibility: hidden;
+    margin: 0;
+    font-size: 0; }
 
 .tasksDoneList {
   width: 90%;
-  margin: 50px;
-  margin-bottom: 20px; }
+  margin: 50px; }
   .tasksDoneList .doneButton {
     width: 101%;
     font-size: 1.5em;

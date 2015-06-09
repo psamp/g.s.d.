@@ -88,7 +88,6 @@ $weight: 300;
   width:90%;
   margin:50px;
   margin-top:0;
-  margin-bottom:50px;
 
   .whatButton {
     @include colorbutton(yellow, #CCCC00);
@@ -100,12 +99,17 @@ $weight: 300;
       @include lidoinghover();
     }
   }
+
+  .delete {
+    visibility: hidden;
+    margin:0;
+    font-size:0;
+  }
 }
 
 .tasksDoneList {
   width:90%;
   margin:50px;
-  margin-bottom:20px;
 
   .doneButton {
     @include colorbutton(#00ff00, #00CC00);

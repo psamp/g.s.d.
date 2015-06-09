@@ -37,7 +37,7 @@
 
     // ...AND FINALLY APPEND THE TEXT THAT WAS INPUT TO THE #TASKS UL.
 
-    $('#tasks').append('<li class="">' + taskText + '</li>');
+    $('#tasks').append('<li class="open">' + taskText + '</li>');
 
   });
 
@@ -63,6 +63,8 @@
     if (taskToEdit.status === 'Closed') {
 
       // ...APPEND FINISHED TASKS TO THE DONE UL WITH A CSS CLASS THAT WILL PULL IN STYLES...
+
+      $('#tasks li').addClass('delete');
 
       $('#tasksDone').append('<li class="complete">' + tTask + '</li>');
 
