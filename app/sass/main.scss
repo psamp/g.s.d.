@@ -12,7 +12,7 @@
   width:101%;
   font-size:1.5em;
   background-color:$bgcolor;
-  height:150px;
+  height:68px;
   display: inline-block;
   margin:0;
   padding:0;
@@ -27,7 +27,7 @@
 }
 
 @mixin lidoinghover () {
-  transition: .2s all ease;
+  // transition: .2s all ease;
   text-decoration: line-through;
   color:lightgray;
   font-style: italic;
@@ -62,24 +62,17 @@ $weight: 300;
     form {
 
       .taskText {
-        width:100%;
+        width:98%;
         // margin-bottom:20px;
         height:50px;
         text-align:center;
         color:red;
-        border:2px red solid;
-        border-bottom:0;
+        border:8px red solid;
         border-radius:5px;
         border-bottom-left-radius:0;
         border-bottom-right-radius:0;
         outline:none;
 
-      }
-
-      .addButton {
-        @include colorbutton(red, #CC0000);
-        border-top-left-radius:0;
-        border-top-right-radius:0;
       }
   }
 }
@@ -95,28 +88,28 @@ $weight: 300;
 
   li {
 
-    &:hover {
-      @include lidoinghover();
-    }
+  }
   }
 
-  .delete {
-    visibility: hidden;
-    margin:0;
-    font-size:0;
-  }
+.delete {
+  visibility: hidden;
+  margin:0;
+  font-size:0;
 }
 
-.tasksDoneList {
+.closed {
+  @include lidoinghover();
+}
+
+.deleteDone {
   width:90%;
   margin:50px;
+  margin-top:0;
 
-  .doneButton {
+  .deleteButton {
     @include colorbutton(#00ff00, #00CC00);
+    height:30px;
   }
 
-  .complete {
-    @include lidoinghover();
-    transition: none;
-  }
+  font-size:.7em;
 }

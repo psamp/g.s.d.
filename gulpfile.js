@@ -8,6 +8,7 @@ var bower       = require('main-bower-files');
 var notify      = require('gulp-notify');
 var plumber     = require('gulp-plumber');
 var jshint      = require('gulp-jshint');
+var stylish     = require('jshint-stylish');
 var htmlhint    = require('gulp-htmlhint');
 var server      = require('gulp-server-livereload');
 
@@ -55,8 +56,8 @@ gulp.task('hint:js', function() {
   return gulp.src(['./app/js/*.js', '!./app/js/templates.js', '!./app/js/vendor/*'])
     .pipe(notifyError())
     .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'));
+    .pipe(jshint.reporter('fail'))
+    .pipe(jshint.reporter(stylish));
 });
 
 gulp.task('hint:html', function() {

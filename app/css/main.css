@@ -14,34 +14,15 @@
   width: 90%;
   margin: 50px; }
   .newTask form .taskText {
-    width: 100%;
+    width: 98%;
     height: 50px;
     text-align: center;
     color: red;
-    border: 2px red solid;
-    border-bottom: 0;
+    border: 8px red solid;
     border-radius: 5px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     outline: none; }
-  .newTask form .addButton {
-    width: 101%;
-    font-size: 1.5em;
-    background-color: red;
-    height: 150px;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    margin-bottom: 20px;
-    color: #CC0000;
-    border: 0;
-    border-radius: 5px;
-    text-align: center;
-    outline: none;
-    text-decoration: none;
-    margin-left: 0;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; }
 
 .tasksDoing {
   width: 90%;
@@ -51,7 +32,7 @@
     width: 101%;
     font-size: 1.5em;
     background-color: yellow;
-    height: 150px;
+    height: 68px;
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -63,24 +44,27 @@
     outline: none;
     text-decoration: none;
     margin-left: 0; }
-  .tasksDoing li:hover {
-    transition: .2s all ease;
-    text-decoration: line-through;
-    color: lightgray;
-    font-style: italic; }
-  .tasksDoing .delete {
-    visibility: hidden;
-    margin: 0;
-    font-size: 0; }
 
-.tasksDoneList {
+.delete {
+  visibility: hidden;
+  margin: 0;
+  font-size: 0; }
+
+.closed {
+  text-decoration: line-through;
+  color: lightgray;
+  font-style: italic; }
+
+.deleteDone {
   width: 90%;
-  margin: 50px; }
-  .tasksDoneList .doneButton {
+  margin: 50px;
+  margin-top: 0;
+  font-size: .7em; }
+  .deleteDone .deleteButton {
     width: 101%;
     font-size: 1.5em;
     background-color: #00ff00;
-    height: 150px;
+    height: 68px;
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -91,10 +75,5 @@
     text-align: center;
     outline: none;
     text-decoration: none;
-    margin-left: 0; }
-  .tasksDoneList .complete {
-    transition: .2s all ease;
-    text-decoration: line-through;
-    color: lightgray;
-    font-style: italic;
-    transition: none; }
+    margin-left: 0;
+    height: 30px; }
